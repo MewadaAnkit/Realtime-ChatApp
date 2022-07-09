@@ -19,11 +19,23 @@ app.get("/",(req,res)=>{
 
 //Socket code
 const io = require('socket.io')(http)
+   var users={}
 io.on('connection',(socket)=>{
      //console.log("connected....")
+     socket.on("user-joined",(name)=>{
+          users[socket.id] = name;
+           socket.broadcast.emit('user-connected',name)
+        io.emit('user-list',users);
+     })
     socket.on('message',(msg)=>{
         //console.log(msg)
         socket.broadcast.emit('message1', msg)
+    })
+    socket.on('disconnect',()=>{
+        socket.broadcast.emit('left',users[socket.id]);
+        delete users[socket.id];
+        io.emit('user-list',users);
+
     })
     
 })

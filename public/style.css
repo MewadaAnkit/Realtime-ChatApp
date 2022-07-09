@@ -11,7 +11,7 @@ body{
     min-height: 100vh;
     background: #FBFBFB;
     font-family: 'Roboto',sans-serif;
-    background: #7c7676;
+    background:url('whbg.jpg');
 }
 section.chat_section{
     width: 800px;
@@ -23,10 +23,19 @@ section.chat_section{
 }
 .brand{
     padding:20px;
-    background: #e8c2c2;
+    background: #d094e2;
     display: flex;
     align-items: center;
     border-radius: 4px;
+}
+
+.users_list{
+     margin-left:65%;
+     padding:10px;
+     color:white;
+     background: green;
+     width:20%;
+     border-radius: 20px;
 }
 .brand span{
     color:rgb(227, 28, 28);
@@ -34,7 +43,7 @@ section.chat_section{
 .brand h1{
     text-transform: uppercase;
     font-size: 20px;
-    color: rgb(92, 65, 50);
+    color: rgb(173, 98, 71);
     margin-left:10px;
     font-family:cursive;
 }
@@ -53,24 +62,33 @@ textarea{
     padding: 20px;
     font-size:16px;
     outline: none;
-    background: #e5d3d3;
+    color:white;
+    background: #dc95ee;
     border-radius: 4px;
 }
 .message{
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-bottom: 40px;
     max-width: 300px;
     position: relative;
 }
 .incoming{
-    background: #8F8BE8;
+    background: #7e7ad5;
     color: #fff;
+    width:30%;
 }
 .outgoing{
     background: #e9eafd;
-    color: #787986;
+    color: #26262c;
     margin-left: auto;
+}
+.usr-joined{
+    color: rgb(202, 48, 48);
+    align-items: center;
+    margin-bottom: 40px;
+    width:80%;
+    height:18px;
 }
 .message h4{
     position: absolute;
@@ -79,3 +97,9 @@ textarea{
     color: #333;
     font-size: 14px;
 }
+@media only screen and (max-width: 600px) {
+   .users_list {
+      margin-left: auto;
+      width: auto;
+    }
+  }
